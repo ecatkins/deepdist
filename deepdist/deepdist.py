@@ -113,8 +113,8 @@ class DeepDist:
         else:
             if master.startswith('spark://'):
                 master = '%s:5000' % urlparse.urlparse(master).netloc.split(':')[0]
-            # else:
-            #     master = '%s:5000' % master.split(':')[0]
+            else:
+                master = '%s:5000' % master.split(':')[0]
         print '\n*** Master: %s\n' % master
 
         self.descent = descent
