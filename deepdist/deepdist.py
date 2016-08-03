@@ -102,7 +102,9 @@ class DeepDist:
         app.run(host='0.0.0.0', debug=True, threaded=True, use_reloader=False)
 
     def train(self, rdd, gradient, descent):
-        master = self.master   # will be pickled
+        master = self.master # will be pickled
+        print("MASTER ROUND 2")
+        print(master)
         if master == None:
             master = rdd.ctx._conf.get('spark.master')
         if master.startswith('local['):
