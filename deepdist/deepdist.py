@@ -16,8 +16,6 @@ class DeepDist:
         :param model: provide a model that can be trained in parallel on the workers
         """
         self.model  = model
-        print("THIS IS THE MODEL")
-        print(self.model)
         self.lock   = RWLock()
         self.descent  = lambda model, gradient: model
         self.master   = master
@@ -28,6 +26,13 @@ class DeepDist:
         self.pmodel   = None
         self.min_updates = min_updates
         self.max_updates = max_updates
+        print("THIS IS THE MASTER")
+        print(self.master)
+        print("\n")
+        print("THIS IS THE MODEL 1")
+        print(self.model)
+        print("\n")
+        
 
     def __enter__(self):
         Thread(target=self.start).start()
