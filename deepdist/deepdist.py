@@ -16,6 +16,7 @@ class DeepDist:
         :param model: provide a model that can be trained in parallel on the workers
         """
         self.model  = model
+        print("THIS IS THE MODEL")
         print(self.model)
         self.lock   = RWLock()
         self.descent  = lambda model, gradient: model
